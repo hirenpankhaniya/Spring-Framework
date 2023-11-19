@@ -123,6 +123,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 					Borrowing borrowingReturn = borrowingRepository.save(borrowing);
 					
 					bookFromDB.setStatus(BookStatus.BORROWED);
+					bookFromDB.setBorrowing(borrowingReturn);
 					bookService.updateBook(bookFromDB.getId(), bookFromDB);
 					
 					return borrowingReturn;
@@ -148,6 +149,7 @@ public class BorrowingServiceImpl implements BorrowingService {
 						Borrowing borrowingReturn = borrowingRepository.save(borrowingFromDB);
 						
 						bookFromDB.setStatus(BookStatus.AVAILABLE);
+						bookFromDB.setBorrowing(null);
 						bookService.updateBook(bookFromDB.getId(), bookFromDB);
 						
 						return borrowingReturn;

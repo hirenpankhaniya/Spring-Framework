@@ -69,7 +69,7 @@ public class Borrower {
 	/**
 	 * @return the borrowingIds
 	 */
-	public Set<Long> getBorrowingIds() {
+	public Set<Long> getBorrowings() {
 		return borrowingIds;
 	}
 

@@ -5,8 +5,6 @@ package com.tcs.trainings.authorservice.entities;
 
 import java.util.Set;
 
-import com.tcs.trainings.authorservice.models.Book;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -14,7 +12,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,15 +31,17 @@ public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name = "name", nullable = false)
 	private String name;
+	
 	@Column(name = "country", nullable = false)
 	private String country;
+	
 	@ElementCollection(targetClass = Long.class)
+	//@JsonIgnore
 	private Set<Long> bookIds;
-	@Transient
-	private Set<Book> books;
-
+	
 	/**
 	 * @return the id
 	 */

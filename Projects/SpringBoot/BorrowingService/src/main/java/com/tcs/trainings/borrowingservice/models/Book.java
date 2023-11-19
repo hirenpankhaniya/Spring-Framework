@@ -3,6 +3,8 @@
  */
 package com.tcs.trainings.borrowingservice.models;
 
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,8 @@ public class Book {
 	private String title;
 	private String isbn;
 	private BookStatus status;
+	private Set<Long> authorIds;
+	private Long borrowingId;
 
 	/**
 	 * @return the id
@@ -76,6 +80,34 @@ public class Book {
 	 */
 	public void setStatus(BookStatus status) {
 		this.status = status;
+	}
+	
+	/**
+	 * @return the authors
+	 */
+	public Set<Long> getAuthorIds() {
+		return authorIds;
+	}
+
+	/**
+	 * @param authors the authors to set
+	 */
+	public void setAuthorIds(Set<Long> authorIds) {
+		this.authorIds = authorIds;
+	}
+
+	/**
+	 * @return the borrowingId
+	 */
+	public Long getBorrowingId() {
+		return borrowingId;
+	}
+
+	/**
+	 * @param borrowingId the borrowingId to set
+	 */
+	public void setBorrowingId(Long borrowingId) {
+		this.borrowingId = borrowingId;
 	}
 
 }

@@ -74,7 +74,7 @@ public class BorrowingController {
 		if(borrowingReturn != null) {
 			return ResponseEntity.ok(borrowingReturn);
 		} else {
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.noContent().build();
 		}
 	}
 	
@@ -85,7 +85,7 @@ public class BorrowingController {
 		if(borrowingReturn != null) {
 			return ResponseEntity.ok(borrowingReturn);
 		} else {
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.noContent().build();
 		}
 	}
 

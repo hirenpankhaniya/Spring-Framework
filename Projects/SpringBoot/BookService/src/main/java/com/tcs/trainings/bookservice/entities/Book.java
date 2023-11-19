@@ -5,8 +5,6 @@ package com.tcs.trainings.bookservice.entities;
 
 import java.util.Set;
 
-import com.tcs.trainings.bookservice.models.Author;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -16,7 +14,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -53,9 +50,6 @@ public class Book {
 	@Column(name = "borrowingId", nullable = true)
 	private Long borrowingId;
 	
-	@Transient
-	private Set<Author> authors;
-
 	/**
 	 * @return the id
 	 */

@@ -79,6 +79,7 @@ public class BorrowerServiceImpl implements BorrowerService {
 				Borrower borrowerFromDB = findBorrowerById(id);
 				if(borrowerFromDB != null) {
 					borrowerFromDB.setName(borrower.getName());
+					borrowerFromDB.setBorrowings(borrower.getBorrowings());
 					return borrowerRepository.save(borrowerFromDB);
 				}
 			}

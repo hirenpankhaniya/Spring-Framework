@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tcs.trainings.borrowingservice.models;
+package com.tcs.trainings.bookservice.models;
 
 import java.util.Set;
 

@@ -8,6 +8,8 @@ import java.util.Set;
 
 import com.tcs.trainings.bookservice.entities.Book;
 import com.tcs.trainings.bookservice.models.Author;
+import com.tcs.trainings.bookservice.models.Borrower;
+import com.tcs.trainings.bookservice.models.Borrowing;
 
 /**
  * 
@@ -24,11 +26,15 @@ public interface BookService {
 	
 	Set<Book> findAllBooksByAuthorId(Long authorId);
 	
-	Set<Book> findAllBooksByBorrowerId(Long borrowerId);
+	Set<Book> findAllBorrowedBooksByBorrowerId(Long borrowerId);
 	
 	Author getAuthorByAuthorId(Long authorId);
 	
 	Book updateBook(Long id, Book book);
 	
 	Book deleteBookById(Long id);
+	
+	Borrower findBorrowerByBorrowerId(Long borrowerId);
+	
+	Borrowing findBorrowingByBorrowingId(Long borrowingId);
 }

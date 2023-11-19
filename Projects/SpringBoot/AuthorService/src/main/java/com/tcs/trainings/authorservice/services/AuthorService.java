@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.tcs.trainings.authorservice.entities.Author;
+import com.tcs.trainings.authorservice.models.Book;
 
 /**
  * 
@@ -21,9 +22,11 @@ public interface AuthorService {
 	
 	List<Author> findAllAuthors();
 	
-	Set<Long> findAllBooksByAuthorId(Long authorId);
+	Set<Book> findAllBooksByAuthorId(Long authorId);
 	
 	Author updateAuthor(Long id, Author author);
 	
 	Author deleteAuthorById(Long id);
+	
+	Book findBookByBookId(Long bookId);
 }

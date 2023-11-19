@@ -3,6 +3,8 @@
  */
 package com.tcs.trainings.bookservice.models;
 
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,7 @@ public class Author {
 	private Long id;
 	private String name;
 	private String country;
+	private Set<Long> bookIds;
 
 	/**
 	 * @return the id
@@ -63,4 +66,18 @@ public class Author {
 		this.country = country;
 	}
 
+	/**
+	 * @return the bookIds
+	 */
+	public Set<Long> getBookIds() {
+		return bookIds;
+	}
+
+	/**
+	 * @param bookIds the bookIds to set
+	 */
+	public void setBookIds(Set<Long> bookIds) {
+		this.bookIds = bookIds;
+	}
+	
 }

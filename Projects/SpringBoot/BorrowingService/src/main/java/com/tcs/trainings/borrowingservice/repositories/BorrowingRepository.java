@@ -3,6 +3,8 @@
  */
 package com.tcs.trainings.borrowingservice.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +18,5 @@ import com.tcs.trainings.borrowingservice.entities.Borrowing;
 @Repository
 public interface BorrowingRepository extends JpaRepository<Borrowing, Long> {
 
-	Borrowing findBorrowingByBookId(Long bookId);
+	List<Borrowing> findBorrowingByBookId(Long bookId);
 }

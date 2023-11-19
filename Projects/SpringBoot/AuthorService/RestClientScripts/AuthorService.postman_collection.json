@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "ac8afd9b-c098-4a71-9bac-c9cf83d856fa",
+		"name": "AuthorService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30545856"
+	},
+	"item": [
+		{
+			"name": "GetAllAuthors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8091/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "AddAuthor1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"J.K. Rowling\",\r\n\"country\":\"USA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8091/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "AddAuthor2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Amish Tripathi\",\r\n\"country\":\"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8091/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "AddAuthor3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"Test to delete\",\r\n\"country\":\"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8091/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAuthorById1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8091/api/authors/1"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAuthorById2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8091/api/authors/2"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAuthorById3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8091/api/authors/3"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAuthor1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"J.K. Rowling\",\r\n    \"country\": \"USA\",\r\n    \"bookIds\": [\r\n        1,\r\n        2\t\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8091/api/authors/1"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAuthor2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"Amish Tripathi\",\r\n    \"country\": \"India\",\r\n    \"bookIds\": [\r\n        3,\r\n        4,\r\n        5\t\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8091/api/authors/2"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAuthorById3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8091/api/authors/3"
+			},
+			"response": []
+		}
+	]
+}

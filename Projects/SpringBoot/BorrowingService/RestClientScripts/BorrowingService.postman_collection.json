@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "33aacb2c-4ec9-4672-8700-80d3b5520d15",
+		"name": "BorrowingService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30545856"
+	},
+	"item": [
+		{
+			"name": "GetAllBorrowings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8094/api/borrowings"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/1/borrower/1"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/2/borrower/2"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/3/borrower/3"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/4/borrower/4"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/5/borrower/2"
+			},
+			"response": []
+		},
+		{
+			"name": "BorrowBook1Again",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/1/borrower/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/2"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/3"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/4"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook5",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/5"
+			},
+			"response": []
+		},
+		{
+			"name": "ReturnBook1Again",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8094/api/borrowings/book/1"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBorrowingById5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8094/api/borrowings/5"
+			},
+			"response": []
+		}
+	]
+}

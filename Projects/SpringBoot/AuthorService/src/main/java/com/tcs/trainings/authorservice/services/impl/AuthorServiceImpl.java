@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.tcs.trainings.authorservice.entities.Author;
+import com.tcs.trainings.authorservice.models.Book;
 import com.tcs.trainings.authorservice.repositories.AuthorRepository;
 import com.tcs.trainings.authorservice.services.AuthorService;
 
@@ -32,8 +33,8 @@ public class AuthorServiceImpl implements AuthorService {
 	private final AuthorRepository authorRepository;
 	private final RestTemplate restTemplate = new RestTemplate();
 	
-	@Value("${book.author.service.url}")
-	private String bookAuthorServiceURL;
+	@Value("${book.service.url}")
+	private String bookServiceURL;
 
 	/**
 	 * 
@@ -87,7 +88,22 @@ public class AuthorServiceImpl implements AuthorService {
 				Author authorFromDB = findAuthorById(id);
 				if(authorFromDB != null) {
 					authorFromDB.setName(author.getName());
-					authorFromDB.setBookIds(author.getBookIds());
+					
+					Set<Long> bookIds = author.getBookIds();
+					Set<Long> validatedBookIds = new HashSet<>(); 
+					
+					if(bookIds != null && !bookIds.isEmpty()) {
+						
+						for(Long bookId : bookIds) {
+							
+							Book book = findBookByBookId(bookId);
+							if(book != null) {
+								validatedBookIds.add(book.getId());
+							}
+						}
+					}
+					authorFromDB.setBookIds(validatedBookIds);
+					
 					return authorRepository.save(authorFromDB);
 				}
 			}
@@ -112,20 +128,33 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 
 	@Override
-	public Set<Long> findAllBooksByAuthorId(Long authorId) {
-		/*
+	public Set<Book> findAllBooksByAuthorId(Long authorId) {
+		Set<Book> books = new HashSet<>();
 		try {
 			if(authorId != null && authorId > 0) {
 				Author authorFromDB = findAuthorById(authorId);
 				if(authorFromDB != null) {
-					restTemplate.get
-					return authorFromDB.getBookIds();
+					Set<Long> bookIds = authorFromDB.getBookIds();
+					for(Long bookId : bookIds) {
+						Book book = findBookByBookId(bookId);
+						books.add(book);
+					}
 				}
 			}
 		} catch (Exception e) {
 			logger.error("Exception occurred while finding all Books by Author: ", e);
-		}*/
-		return new HashSet<>();
+		}
+		return books;
+	}
+	
+	@Override
+	public Book findBookByBookId(Long bookId) {
+		try {
+			return restTemplate.getForEntity(bookServiceURL + "/" + bookId, Book.class).getBody();
+		} catch (Exception e) {
+			logger.error("Exception occurred while getting Book by Book Id: " + e.getMessage(), e);
+		}
+		return null;
 	}
 
 }

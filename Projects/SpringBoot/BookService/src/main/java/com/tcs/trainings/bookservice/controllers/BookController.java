@@ -48,16 +48,16 @@ public class BookController {
 		return ResponseEntity.status(HttpStatus.OK).body(bookService.findAllBooks());
 	}
 	
-	@GetMapping("/author/{id}")
-	public ResponseEntity<Set<Book>> getAllBooksByAuthorId(@PathVariable Long id) {
+	@GetMapping("/author/{authorId}")
+	public ResponseEntity<Set<Book>> getAllBooksByAuthorId(@PathVariable Long authorId) {
 		
-		return ResponseEntity.status(HttpStatus.OK).body(bookService.findAllBooksByAuthorId(id));
-	}
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.findAllBooksByAuthorId(authorId));
+	}	
 	
-	@GetMapping("/borrower/{id}")
-	public ResponseEntity<Set<Book>> getAllBorrowedBooksByBorrowerId(@PathVariable Long id) {
+	@GetMapping("/borrower/{borrowerId}")
+	public ResponseEntity<Set<Book>> getAllBorrowedBooksByBorrowerId(@PathVariable Long borrowerId) {
 		
-		return ResponseEntity.status(HttpStatus.OK).body(bookService.findAllBooksByBorrowerId(id));
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.findAllBorrowedBooksByBorrowerId(borrowerId));
 	}
 	
 	@GetMapping("/{id}")
